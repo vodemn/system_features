@@ -1,6 +1,6 @@
 # flutter_device_info
 
-A new flutter plugin project.
+Checks device type and returns 'true' if it has touchscreen feature, i.e. it is not a TV
 
 ## Getting Started
 
