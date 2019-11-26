@@ -1,7 +1,6 @@
-package com.example.flutter_device_info;
+package com.vodemn.flutter_device_info;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.pm.PackageManager;
 
 import io.flutter.plugin.common.MethodCall;
