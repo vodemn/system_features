@@ -29,12 +29,40 @@ public class FlutterDeviceInfoPlugin implements MethodCallHandler {
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
-    if (call.method.equals("getDeviceType")) {
-      PackageManager pm = context.getPackageManager();
-      result.success(pm.hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN));
 
-    }else {
+    PackageManager pm = context.getPackageManager();
+    switch (call.method) {
+    case "touchscreen":
+      result.success(pm.hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN));
+      break;
+    case "camera":
+      result.success(pm.hasSystemFeature("android.hardware.camera"));
+      break;
+    case "phone":
+      result.success(pm.hasSystemFeature("android.hardware.telephony"));
+      break;
+    case "faketouch":
+      result.success(pm.hasSystemFeature("android.hardware.faketouch"));
+      break;
+    case "nfc":
+      result.success(pm.hasSystemFeature("android.hardware.nfc"));
+      break;
+    case "microphone":
+      result.success(pm.hasSystemFeature("android.hardware.microphone"));
+      break;
+    case "sensor":
+      result.success(pm.hasSystemFeature("android.hardware.microphone"));
+      break;
+    case "leanback":
+      result.success(pm.hasSystemFeature("android.software.leanback"));
+      break;
+    case "isGoogleTV":
+      result.success(pm.hasSystemFeature("com.google.android.tv"));
+      break;
+
+    default:
       result.notImplemented();
+      break;
     }
   }
 }

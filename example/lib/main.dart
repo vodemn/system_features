@@ -12,7 +12,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _platformVersion = true;
+  bool touchscreen = true;
+  bool faketouch = true;
+  bool nfc = true;
+  bool isGoogleTv = true;
+  bool phone = true;
+  bool camera = true;
+  bool microphone = true;
+  bool leanback = true;
+  bool sensor = true;
 
   @override
   void initState() {
@@ -22,22 +30,23 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    bool platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterDeviceInfo.platformVersion;
-    } on PlatformException {
-      platformVersion = false;
-    }
+    touchscreen = await FlutterDeviceInfo.touchscreen;
+    faketouch = await FlutterDeviceInfo.faketouch;
+    camera = await FlutterDeviceInfo.camera;
+    nfc = await FlutterDeviceInfo.nfc;
+    microphone = await FlutterDeviceInfo.isGoogleTv;
+    phone = await FlutterDeviceInfo.isGoogleTv;
+    camera = await FlutterDeviceInfo.camera;
+    sensor = await FlutterDeviceInfo.sensor;
+    leanback = await FlutterDeviceInfo.leanback;
+    isGoogleTv = await FlutterDeviceInfo.isGoogleTv;
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+    setState(() {});
   }
 
   @override
@@ -48,7 +57,19 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: <Widget>[
+              Text('Camera: $camera\n'),
+              Text('sensor: $sensor\n'),
+              Text('touchscreen: $touchscreen\n'),
+              Text('faketouch: $faketouch\n'),
+              Text('nfc: $nfc\n'),
+              Text('phone: $phone\n'),
+              Text('microphone: $microphone\n'),
+              Text('leanback: $leanback\n'),
+              Text('isGoogleTv: $isGoogleTv\n'),
+            ],
+          ),
         ),
       ),
     );
