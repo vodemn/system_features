@@ -1,6 +1,6 @@
-# flutter_device_info
+# system_features
 
-Checks device type and returns 'true' if it has touchscreen feature, i.e. it is not a TV
+A new flutter plugin project.
 
 ## Getting Started
 
@@ -12,4 +12,3 @@ Android and/or iOS.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
-"# device_type" 

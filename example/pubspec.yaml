@@ -1,5 +1,5 @@
-name: flutter_device_info_example
-description: Demonstrates how to use the flutter_device_info plugin.
+name: system_features_example
+description: Demonstrates how to use the system_features plugin.
 publish_to: 'none'
 
 environment:
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_device_info:
+  system_features:
     path: ../
 
 # For information on the generic Dart part of this file, see the

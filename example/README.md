@@ -1,6 +1,6 @@
-# flutter_device_info_example
+# system_features_example
 
-Demonstrates how to use the flutter_device_info plugin.
+Demonstrates how to use the system_features plugin.
 
 ## Getting Started
 
